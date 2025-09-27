@@ -1,3 +1,6 @@
+create schema if not exists shop;
+set search_path to shop;
+
 --категория с логикой дерева
 create table if not exists category(
 id_category serial primary key,
@@ -33,3 +36,4 @@ id_order_product serial primary key,
 id_purchase integer references purchase(id_purchase),
 id_product integer references product(id_product),
 product_amount integer default 1);
+
